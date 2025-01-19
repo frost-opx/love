@@ -3,254 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surat Cintaku</title>
+    <title>Animasi Surat Cinta</title>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <style>
         body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8e8e1; /* Soft romantic color */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    text-align: center;
-    overflow: hidden; /* Prevent scrolling */
-}
+            font-family: 'Arial', sans-serif;
+            background-color: #f8e8e1; /* Soft romantic color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            overflow: hidden; /* Prevent scrolling */
+        }
 
-.container {
-    text-align: center;
-    position: relative;
-    display: flex;
-    flex-direction: column; /* Stack the elements vertically */
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 100vh; /* Ensure full height */
-}
-
-/* Ensuring the animation is centered */
-#animation {
-    cursor: pointer;
-    width: 300px; /* Adjust the size of the animation */
-    height: 300px;
-    margin-top: 20px; /* Add space from top */
-}
-
-#loveLetter {
-    font-size: 1.2rem;
-    color: #5a2d66; /* Deep romantic color */
-    opacity: 0; /* Start with hidden */
-    transform: translateY(20px); /* Slightly lower */
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
-    max-width: 80%;
-    margin-top: 20px; /* Adjust the gap between animation and text */
-    position: relative;
-    text-align: justify; /* Justify the text */
-    display: inline-block; /* Allow wrap effect */
-}
-
-#dearAriqah {
-    font-size: 1.2rem;
-    color: #5a2d66; /* Deep romantic color */
-    text-align: left;
-    padding-left: 0%; /* Align to left like a traditional letter */
-    margin-top: 0; /* No extra margin above */
-}
-
-#suratCintaku {
-    font-size: 2.5rem;
-    text-align: center;
-    color: #d64f96; /* Romantic pink */
-    margin-top: 0; /* Removed extra space above */
-}
-
-.album-section {
-    float: right; /* Ensures the text wraps around the album */
-    margin-right: 20px; /* Space between the text and album */
-    width: 125px; /* Smaller size of album */
-    height: 125px; 
-    text-align: center;
-    margin-bottom: 20px; /* Adds spacing below the album */
-}
-
-.album-section img {
-    width: 100%; /* Ensures image takes full space of the album section */
-    height: 100%;
-    border-radius: 10px;
-}
-
-.album-section button {
-    padding: 8px 34px;
-    font-size: 0.9rem; /* Smaller button */
-    background-color: #d64f96; /* Romantic pink */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    display: inline-block;
-    margin-top: px;
-}
-
-.album-section button:hover {
-    background-color: #a63c77; /* Darker pink on hover */
-}
-
-/* Positioning the closing text at the bottom right */
-#closingText {
-    position: absolute;
-    margin-top: 10px;
-    right: 10px;
-    font-size: 1rem;
-    color: #5a2d66;
-}
-
-.hidden {
-    display: none;
-}
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-/* Media Queries for Responsiveness */
-
-/* For small screens (e.g., mobile phones) */
-@media (max-width: 600px) {
-    #animation {
-        width: 250px; /* Smaller animation size on small screens */
-        height: 250px;
-        margin-top: 0; /* Adjust the space at the top for small screens */
-    }
-
-    #loveLetter {
-        font-size: 1rem; /* Smaller text size on mobile */
-    }
-
-    h1 {
-        font-size: 1.8rem; /* Smaller title on small screens */
-    }
-
-    .album-section img {
-        width: 100px; /* Smaller album image on mobile */
-        height: 100px;
-    }
-
-    .album-section button {
-        font-size: 0.8rem; /* Smaller button size on mobile */
-    }
-
-    #dearAriqah {
-        font-size: 1rem; /* Smaller "Dear Ariqah" text on mobile */
-        padding-left: 5%; /* Adjust padding for mobile */
-    }
-
-    #closingText {
-        font-size: 0.9rem; /* Smaller closing text on mobile */
-    }
-}
-
-/* For medium screens (e.g., tablets) */
-@media (max-width: 1024px) {
-    #animation {
-        width: 280px; /* Slightly smaller animation size for tablets */
-        height: 280px;
-    }
-
-    #loveLetter {
-        font-size: 1.1rem; /* Adjust text size for tablets */
-    }
-
-    h1 {
-        font-size: 2.2rem; /* Adjust title size for tablets */
-    }
-
-    .album-section img {
-        width: 120px; /* Medium-sized album image for tablets */
-        height: 120px;
-    }
-
-    .album-section button {
-        font-size: 1rem; /* Adjust button size for tablets */
-    }
-
-    #dearAriqah {
-        font-size: 1.1rem; /* Adjust font size for tablets */
-    }
-
-    #closingText {
-        font-size: 1rem; /* Adjust closing text for tablets */
-    }
-}
-
+        #animation {
+            cursor: pointer;
+            width: 300px; /* Adjust the size of the animation */
+            height: 300px;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 id="title">Surat Cintaku</h1>
-        <lottie-player id="animation" 
-            src="https://frost-opx.github.io/love/assets/animations/open-letter.json" 
-            background="transparent" 
-            speed="1" 
-            style="width: 300px; height: 300px;" 
-            loop 
-            autoplay>
-        </lottie-player>
-        <div id="loveLetter" class="hidden">
-            <h2 id="suratCintaku">Surat Cintaku</h2>
-            <div class="album-section">
-                <img src="https://frost-opx.github.io/love/assets/image/image.jpeg" alt="Album Cover">
-                <button onclick="playMusic()">Play Music</button>
-            </div>
-            <p id="dearAriqah">Dear Ariqah,</p>
-            <p>
-                Hari ini adalah hari yang menjadi penanda awal mula dari kisah kita bersama, dan disini aku ingin beri tahu ke kamu betapa berharganya dan betapa cintanya diriku ke kamu, mungkin kamu ngerasa aku tidak mencintaimu dan mungkin kamu kira aku tidak ada effortnya untukmu, yaa jika kamu merasa begituu, berarti memang akunya yang kurang effort, kamu gak perlu tau aku bisa buat website ini bagaimana dan berapa lama yang perlu kamu tau adalah website ini berisi surat yang menunjukan betapa cintanya diriku ke kamuu. Ohh iyaa, kamu masih ingat gak chat ini <img src="https://example.com/your-chat-image.jpg" alt="Chat Image" style="width: 100%; max-width: 200px; margin-top: 10px; border-radius: 10px;"> yap betul, ini adalah chat pertama kali yang dimana aku menyatakan cinta ke kamu, pada masa itu kita berdua hanya sahabat biasa yang saling dekat, eh ternyata malah kedekatan itu yang membawa kita menjalin hubungan kekasih sampai sekarang, aku ingin ucapkan maaaf atas seluruh kesalahanku yang pernah kubuat dari buat kamu nangis, suka serius berlebihan, suka marah, suka cuek, dan suka ovt berlebihan, aku minta maaaf atas semua kesalanku yaa sayang, tolong maafkan aku, aku mohon sayaangg jangan pergi yaa, tolong tetaplah menjadi milikku, yaa mungkinn terdengar munafik, tapi seriuss aku beneran ingin terus beersamamu, aku rindu bahkan hanya berpisah denganmu sedetik saja sudah buat aku rindu, aku tidak sanggup untuk melepaskanmu jika kamu pernah dengar bahwa cinta laki laki itu dari 100 ke 0, menurutku itu salah karena cintaku kepada tidak pernah berkurangg sama sekali. aku ucapkan terima kasih telah menemaniku dengan hubungan ini, akuu harap kita berdua akan terus berkembangg dan menjadi pasangan yang sukses bersama dan ku doakan semoga kamu bahagia dan sehat selalu, i love youuu.
-            </p>
-            
-            <div id="closingText">
-                With all my love,<br>Your [your name]
-            </div>
-        </div>
-    </div>
-    <script>
-        // Select elements and handle animations
-        const animation = document.getElementById('animation');
-        const loveLetter = document.getElementById('loveLetter');
-        const title = document.getElementById('title');
-        
-        // Trigger animation and show the love letter after animation completes
-        animation.addEventListener('click', () => {
-            // Hide the animation and title immediately
-            animation.style.display = 'none';
-            title.style.display = 'none';
-            
-            // Show the love letter with fade-in effect
-            loveLetter.classList.remove('hidden');
-            loveLetter.style.animation = 'fadeInUp 1s ease-out forwards';
-        });
+    <lottie-player id="animation" 
+        src="https://frost-opx.github.io/love/assets/animations/open-letter.json" 
+        background="transparent" 
+        speed="1" 
+        style="width: 300px; height: 300px;" 
+        loop 
+        autoplay>
+    </lottie-player>
 
-        // Function to play music (adjust accordingly if you have actual music source)
-        function playMusic() {
-            const music = new Audio('https://frost-opx.github.io/love/assets/music/music.mp3'); // Use the correct music file URL
-            music.play(); // Play the music directly when the button is clicked
-        }
+    <script>
+        // Redirect to the second page after animation ends
+        const animation = document.getElementById('animation');
+        animation.addEventListener('complete', () => {
+            window.location.href = 'next.html'; // Ganti dengan URL halaman kedua kamu
+        });
     </script>
 </body>
 </html>
