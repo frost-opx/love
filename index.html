@@ -7,197 +7,199 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8e8e1; /* Soft romantic color */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-            overflow: hidden; /* Prevent scrolling */
-        }
+    font-family: 'Arial', sans-serif;
+    background-color: #f8e8e1; /* Soft romantic color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    overflow: hidden; /* Prevent scrolling */
+}
 
-        .container {
-            text-align: center;
-            position: relative;
-            display: flex;
-            flex-direction: column; /* Stack the elements vertically */
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-        }
+.container {
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Stack the elements vertically */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh; /* Ensure full height */
+}
 
-        #animation {
-            cursor: pointer;
-            width: 300px; /* Adjust the size of the animation */
-            height: 300px;
-        }
+/* Ensuring the animation is centered */
+#animation {
+    cursor: pointer;
+    width: 300px; /* Adjust the size of the animation */
+    height: 300px;
+    margin-top: 20px; /* Add space from top */
+}
 
-        #loveLetter {
-            font-size: 1.2rem;
-            color: #5a2d66; /* Deep romantic color */
-            opacity: 0; /* Start with hidden */
-            transform: translateY(20px); /* Slightly lower */
-            transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
-            max-width: 80%;
-            margin-top: 20px; /* Adjust the gap between animation and text */
-            position: relative;
-            text-align: justify; /* Justify the text */
-            display: inline-block; /* Allow wrap effect */
-        }
+#loveLetter {
+    font-size: 1.2rem;
+    color: #5a2d66; /* Deep romantic color */
+    opacity: 0; /* Start with hidden */
+    transform: translateY(20px); /* Slightly lower */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
+    max-width: 80%;
+    margin-top: 20px; /* Adjust the gap between animation and text */
+    position: relative;
+    text-align: justify; /* Justify the text */
+    display: inline-block; /* Allow wrap effect */
+}
 
-        #dearAriqah {
-            font-size: 1.2rem;
-            color: #5a2d66; /* Deep romantic color */
-            text-align: left;
-            padding-left: 0%; /* Align to left like a traditional letter */
-            margin-top: 0; /* No extra margin above */
-        }
+#dearAriqah {
+    font-size: 1.2rem;
+    color: #5a2d66; /* Deep romantic color */
+    text-align: left;
+    padding-left: 0%; /* Align to left like a traditional letter */
+    margin-top: 0; /* No extra margin above */
+}
 
-        #suratCintaku {
-            font-size: 2.5rem;
-            text-align: center;
-            color: #d64f96; /* Romantic pink */
-            margin-top: 0; /* Removed extra space above */
-        }
+#suratCintaku {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #d64f96; /* Romantic pink */
+    margin-top: 0; /* Removed extra space above */
+}
 
-        /* Album section with smaller size and square wrap effect */
-        .album-section {
-            float: right; /* Ensures the text wraps around the album */
-            margin-right: 20px; /* Space between the text and album */
-            width: 150px; /* Smaller size of album */
-            height: 150px; 
-            text-align: center;
-            margin-bottom: 20px; /* Adds spacing below the album */
-        }
+.album-section {
+    float: right; /* Ensures the text wraps around the album */
+    margin-right: 20px; /* Space between the text and album */
+    width: 125px; /* Smaller size of album */
+    height: 125px; 
+    text-align: center;
+    margin-bottom: 20px; /* Adds spacing below the album */
+}
 
-        .album-section img {
-            width: 100%; /* Ensures image takes full space of the album section */
-            height: 100%;
-            border-radius: 10px;
-        }
+.album-section img {
+    width: 100%; /* Ensures image takes full space of the album section */
+    height: 100%;
+    border-radius: 10px;
+}
 
-        .album-section button {
-            padding: 8px 15px;
-            font-size: 0.9rem; /* Smaller button */
-            background-color: #d64f96; /* Romantic pink */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            display: inline-block;
-            margin-top: 10px;
-        }
+.album-section button {
+    padding: 8px 34px;
+    font-size: 0.9rem; /* Smaller button */
+    background-color: #d64f96; /* Romantic pink */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-block;
+    margin-top: px;
+}
 
-        .album-section button:hover {
-            background-color: #a63c77; /* Darker pink on hover */
-        }
+.album-section button:hover {
+    background-color: #a63c77; /* Darker pink on hover */
+}
 
-        /* Positioning the closing text at the bottom right */
-        #closingText {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            font-size: 1rem;
-            color: #5a2d66;
-        }
+/* Positioning the closing text at the bottom right */
+#closingText {
+    position: absolute;
+    margin-top: 10px;
+    right: 10px;
+    font-size: 1rem;
+    color: #5a2d66;
+}
 
-        .hidden {
-            display: none;
-        }
+.hidden {
+    display: none;
+}
 
-        /* Animasi transisi untuk surat cinta */
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        /* Animasi transisi untuk judul dan animasi */
-        @keyframes fadeOut {
-            0% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
 
-        /* Media Queries for Responsiveness */
+/* Media Queries for Responsiveness */
 
-        /* For small screens (e.g., mobile phones) */
-        @media (max-width: 600px) {
-            #animation {
-                width: 250px; /* Smaller animation size on small screens */
-                height: 250px;
-            }
+/* For small screens (e.g., mobile phones) */
+@media (max-width: 600px) {
+    #animation {
+        width: 250px; /* Smaller animation size on small screens */
+        height: 250px;
+        margin-top: 0; /* Adjust the space at the top for small screens */
+    }
 
-            #loveLetter {
-                font-size: 1rem; /* Smaller text size on mobile */
-            }
+    #loveLetter {
+        font-size: 1rem; /* Smaller text size on mobile */
+    }
 
-            h1 {
-                font-size: 1.8rem; /* Smaller title on small screens */
-            }
+    h1 {
+        font-size: 1.8rem; /* Smaller title on small screens */
+    }
 
-            .album-section img {
-                width: 100px; /* Smaller album image on mobile */
-                height: 100px;
-            }
+    .album-section img {
+        width: 100px; /* Smaller album image on mobile */
+        height: 100px;
+    }
 
-            .album-section button {
-                font-size: 0.8rem; /* Smaller button size on mobile */
-            }
+    .album-section button {
+        font-size: 0.8rem; /* Smaller button size on mobile */
+    }
 
-            #dearAriqah {
-                font-size: 1rem; /* Smaller "Dear Ariqah" text on mobile */
-                padding-left: 5%; /* Adjust padding for mobile */
-            }
+    #dearAriqah {
+        font-size: 1rem; /* Smaller "Dear Ariqah" text on mobile */
+        padding-left: 5%; /* Adjust padding for mobile */
+    }
 
-            #closingText {
-                font-size: 0.9rem; /* Smaller closing text on mobile */
-            }
-        }
+    #closingText {
+        font-size: 0.9rem; /* Smaller closing text on mobile */
+    }
+}
 
-        /* For medium screens (e.g., tablets) */
-        @media (max-width: 1024px) {
-            #animation {
-                width: 280px; /* Slightly smaller animation size for tablets */
-                height: 280px;
-            }
+/* For medium screens (e.g., tablets) */
+@media (max-width: 1024px) {
+    #animation {
+        width: 280px; /* Slightly smaller animation size for tablets */
+        height: 280px;
+    }
 
-            #loveLetter {
-                font-size: 1.1rem; /* Adjust text size for tablets */
-            }
+    #loveLetter {
+        font-size: 1.1rem; /* Adjust text size for tablets */
+    }
 
-            h1 {
-                font-size: 2.2rem; /* Adjust title size for tablets */
-            }
+    h1 {
+        font-size: 2.2rem; /* Adjust title size for tablets */
+    }
 
-            .album-section img {
-                width: 120px; /* Medium-sized album image for tablets */
-                height: 120px;
-            }
+    .album-section img {
+        width: 120px; /* Medium-sized album image for tablets */
+        height: 120px;
+    }
 
-            .album-section button {
-                font-size: 1rem; /* Adjust button size for tablets */
-            }
+    .album-section button {
+        font-size: 1rem; /* Adjust button size for tablets */
+    }
 
-            #dearAriqah {
-                font-size: 1.1rem; /* Adjust font size for tablets */
-            }
+    #dearAriqah {
+        font-size: 1.1rem; /* Adjust font size for tablets */
+    }
 
-            #closingText {
-                font-size: 1rem; /* Adjust closing text for tablets */
-            }
-        }
+    #closingText {
+        font-size: 1rem; /* Adjust closing text for tablets */
+    }
+}
+
     </style>
 </head>
 <body>
