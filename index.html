@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Second Anniversary</title>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8e8e1; /* Soft romantic color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #d64f96; /* Romantic pink */
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+        }
+
+        #loveLetter {
+            font-size: 1.2rem;
+            color: #5a2d66; /* Deep romantic color */
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">Happy second anniversary</h1>
+        <lottie-player id="animation" 
+            src="https://assets7.lottiefiles.com/packages/lf20_jmBau3.json" 
+            background="transparent" 
+            speed="1" 
+            style="width: 300px; height: 300px;" 
+            loop 
+            autoplay>
+        </lottie-player>
+        <div id="loveLetter" class="hidden">
+            <h2>Dear Ariqah,</h2>
+            <p>
+                Today marks a beautiful milestone in our journey together, 
+                and I want you to know how much you mean to me. Every moment with you is a treasure, 
+                and I am endlessly grateful for your love and presence in my life. 
+                Here's to us, to our memories, and to the love that keeps growing stronger every day. ❤️
+            </p>
+            <p>With all my love,<br>Your [your name]</p>
+        </div>
+    </div>
+    <script>
+        // Select the animation and the love letter container
+        const animation = document.getElementById('animation');
+        const title = document.getElementById('title');
+        const loveLetter = document.getElementById('loveLetter');
+
+        // Add click event to the animation
+        animation.addEventListener('click', function() {
+            // Hide the animation and title
+            animation.style.display = 'none';
+            title.style.display = 'none';
+            
+            // Show the love letter
+            loveLetter.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
