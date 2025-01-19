@@ -3,43 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animasi Surat Cinta</title>
+    <title>Surat Cintaku - Animation</title>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f8e8e1; /* Soft romantic color */
+            background-color: #f8e8e1;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             text-align: center;
-            overflow: hidden; /* Prevent scrolling */
         }
 
         #animation {
             cursor: pointer;
-            width: 300px; /* Adjust the size of the animation */
+            width: 300px;
             height: 300px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <lottie-player id="animation" 
-        src="https://frost-opx.github.io/love/assets/animations/open-letter.json" 
-        background="transparent" 
-        speed="1" 
-        style="width: 300px; height: 300px;" 
-        loop 
-        autoplay>
-    </lottie-player>
+    <div class="container">
+        <h1>Surat Cintaku</h1>
+        <lottie-player id="animation" 
+            src="https://frost-opx.github.io/love/assets/animations/open-letter.json" 
+            background="transparent" 
+            speed="1" 
+            style="width: 300px; height: 300px;" 
+            loop 
+            autoplay>
+        </lottie-player>
+    </div>
 
     <script>
-        // Redirect to the second page after animation ends
+        // Redirect to second website when animation is clicked
         const animation = document.getElementById('animation');
-        animation.addEventListener('complete', () => {
-            window.location.href = 'next.html'; // Ganti dengan URL halaman kedua kamu
+        
+        animation.addEventListener('click', () => {
+            window.location.href = 'second-website.html';  // Link to the second website (Love Letter page)
         });
     </script>
 </body>
