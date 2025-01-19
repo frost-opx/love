@@ -7,81 +7,103 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8e8e1; /* Soft romantic color */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-            overflow: hidden; /* Prevent scrolling */
-        }
+    font-family: 'Arial', sans-serif;
+    background-color: #f8e8e1; /* Soft romantic color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    overflow: hidden; /* Prevent scrolling */
+}
 
-        h1, h2 {
-            color: #d64f96; /* Romantic pink */
-        }
+.container {
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Stack the elements vertically */
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensure full-width */
+}
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
+#animation {
+    cursor: pointer;
+    width: 300px; /* Adjust the size of the animation */
+    height: 300px;
+}
 
+#loveLetter {
+    font-size: 1.2rem;
+    color: #5a2d66; /* Deep romantic color */
+    opacity: 0; /* Start with hidden */
+    transform: translateY(20px); /* Slightly lower */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
+    max-width: 80%;
+    margin-top: 20px; /* Adjust the gap between animation and text */
+}
 
-        #loveLetter {
-            font-size: 1.2rem;
-            color: #5a2d66; /* Deep romantic color */
-            opacity: 0; /* Start with hidden */
-            transform: translateY(20px); /* Slightly lower */
-            transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            max-width: 80%;
-        }
+.hidden {
+    display: none;
+}
 
-        .hidden {
-            display: none;
-        }
-        .container {
-          text-align: center;
-          position: relative;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column; /* Stack the elements vertically */
-         }
+/* Animasi transisi untuk surat cinta */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        #animation {
-        cursor: pointer;
-        width: 300px; /* Adjust the size of the animation */
-        height: 300px;
-       }
+/* Animasi transisi untuk judul dan animasi */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
 
-        /* Animasi transisi untuk surat cinta */
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+/* Media Queries for Responsiveness */
 
-        /* Animasi transisi untuk judul dan animasi */
-        @keyframes fadeOut {
-            0% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
+/* For small screens (e.g., mobile phones) */
+@media (max-width: 600px) {
+    #animation {
+        width: 250px; /* Smaller animation size on small screens */
+        height: 250px;
+    }
+
+    #loveLetter {
+        font-size: 1rem; /* Smaller text size on mobile */
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Smaller title on small screens */
+    }
+}
+
+/* For medium screens (e.g., tablets) */
+@media (max-width: 1024px) {
+    #animation {
+        width: 280px; /* Slightly smaller animation size for tablets */
+        height: 280px;
+    }
+
+    #loveLetter {
+        font-size: 1.1rem; /* Adjust text size for tablets */
+    }
+
+    h1 {
+        font-size: 2.2rem; /* Adjust title size for tablets */
+    }
+}
+
     </style>
 </head>
 <body>
