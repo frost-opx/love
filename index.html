@@ -29,15 +29,46 @@
         .container {
             text-align: center;
             position: relative;
+            width: 80%;
+            max-width: 600px;
         }
 
         #loveLetter {
             font-size: 1.2rem;
             color: #5a2d66; /* Deep romantic color */
+            opacity: 0; /* Start with hidden */
+            transform: translateY(20px); /* Slightly lower */
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
         }
 
         .hidden {
             display: none;
+        }
+
+        #animation {
+            cursor: pointer;
+        }
+
+        /* Animasi transisi untuk surat cinta */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animasi transisi untuk judul dan animasi */
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
         }
     </style>
 </head>
@@ -71,12 +102,20 @@
 
         // Add click event to the animation
         animation.addEventListener('click', function() {
-            // Hide the animation and title
-            animation.style.display = 'none';
-            title.style.display = 'none';
+            // Apply fade-out animation for title and animation
+            title.style.animation = 'fadeOut 1s forwards';
+            animation.style.animation = 'fadeOut 1s forwards';
             
-            // Show the love letter
-            loveLetter.classList.remove('hidden');
+            // Wait for the fade-out animation to complete
+            setTimeout(function() {
+                // Hide the animation and title
+                animation.style.display = 'none';
+                title.style.display = 'none';
+                
+                // Show the love letter with fade-in animation
+                loveLetter.classList.remove('hidden');
+                loveLetter.style.animation = 'fadeInUp 1s forwards';
+            }, 1000); // Match the fade-out duration
         });
     </script>
 </body>
