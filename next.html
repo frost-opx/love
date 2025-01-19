@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surat Cintaku - Love Letter</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8e8e1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        #loveLetter {
+            font-size: 1.2rem;
+            color: #5a2d66;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            max-width: 80%;
+            margin-top: 20px;
+            position: relative;
+            text-align: justify;
+        }
+
+        #dearAriqah {
+            font-size: 1.2rem;
+            color: #5a2d66;
+            text-align: left;
+            padding-left: 0%;
+            margin-top: 0;
+        }
+
+        #suratCintaku {
+            font-size: 2.5rem;
+            text-align: center;
+            color: #d64f96;
+            margin-top: 0;
+        }
+
+        .album-section {
+            float: right;
+            margin-right: 20px;
+            width: 125px;
+            height: 125px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .album-section img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .album-section button {
+            padding: 8px 34px;
+            font-size: 0.9rem;
+            background-color: #d64f96;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .album-section button:hover {
+            background-color: #a63c77;
+        }
+
+        #closingText {
+            position: absolute;
+            margin-top: 10px;
+            right: 10px;
+            font-size: 1rem;
+            color: #5a2d66;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="suratCintaku">Surat Cintaku</h1>
+        <div id="loveLetter" class="hidden">
+            <div class="album-section">
+                <img src="https://frost-opx.github.io/love/assets/image/image.jpeg" alt="Album Cover">
+                <button id="playButton" onclick="playMusic()">Play Music</button>
+            </div>
+            <p id="dearAriqah">Dear Ariqah,</p>
+            <p>
+                Hari ini adalah hari yang menjadi penanda awal mula dari kisah kita bersama, dan disini aku ingin beri tahu ke kamu betapa berharganya dan betapa cintanya diriku ke kamu... (Continue the rest of your love letter here)
+            </p>
+            <div id="closingText">
+                With all my love,<br>Your [your name]
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let music = new Audio('https://frost-opx.github.io/love/assets/music/music.mp3');
+
+        function playMusic() {
+            if (music.paused) {
+                music.play();
+                document.getElementById("playButton").textContent = "Pause Music";
+            } else {
+                music.pause();
+                document.getElementById("playButton").textContent = "Play Music";
+            }
+        }
+
+        // Show the love letter content with fade-in effect
+        window.addEventListener('load', () => {
+            const loveLetter = document.getElementById('loveLetter');
+            loveLetter.classList.remove('hidden');
+            loveLetter.style.animation = 'fadeInUp 1s ease-out forwards';
+        });
+    </script>
+</body>
+</html>
